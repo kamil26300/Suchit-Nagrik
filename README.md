@@ -75,7 +75,7 @@ nodemon
 npm install -r requirements.txt   
 ```
 
-Create a .env file in the project root directory and add the following environment variables:   
+Create a .env file in the project client directory and add the following environment variables:   
 ```bash
 OPEN_AI_API_KEY = <your-openai-api-key>
 MACHINE_LANGUAGE_CODE = <machine-language-code>
