@@ -35,51 +35,6 @@ This project is a voice-activated assistant designed to provide information abou
 - Natural language understanding: Extracts keywords and entities from user input to improve search accuracy.
 
 
-## Deployment
-
-Run the server:
-
-```bash
-  cd server
-  npm run dev
-```
-
-Run python script:
-```bash
-  python SN.py
-```
-
-
-
-## Demo
-
-    Hello from the pygame community. https://www.pygame.org/contribute.html
-    SN: Hello, I'm here to help you with schemes. Select your language: Hindi, Tamil, Telugu, or English?
-
-    * recording
-    * done recording
-    User: English
-
-    SN: Hello. How can I help you with ?
-
-    * recording
-    * done recording
-    User: handicraft societies in Puducherry.
-
-    Keywords: {'tags': ['handicraft', 'society'], 'state': 'Puducherry'}
-    SN: "Grant To Handicrafts Societies" Component of the "Development of Handicrafts" Scheme: “Grant To Handicrafts Societies” by the Department of Industries and Commerce, UT of Puducherry aims to encourage the creation 
-    of Handicrafts Societies to enhance coordination and skill among craftspeople. Grants are provided to registered societies for organizing or participating in exhibitions.
-
-    SN: Anything else ?
-
-    * recording
-    * done recording
-    User: Good bye.
-
-    SN: Good bye.
-
-
-
 ## Installation
 
 Clone the repository:
@@ -134,6 +89,52 @@ TTS_MODEL = <text-to-speech-model>
 STT_MODEL = <speech-to-text-model>
 GPT_TEXT_MODEL = <gpt-text-model>
 ```
+
+## Deployment
+
+Run the server:
+
+```bash
+  cd server
+  npm run dev
+```
+
+Run python script:
+```bash
+  python SN.py
+```
+
+
+
+## Demo
+
+    Hello from the pygame community. https://www.pygame.org/contribute.html
+    SN: Hello, I'm here to help you with schemes. Select your language: Hindi, Tamil, Telugu, or English?
+
+    * recording
+    * done recording
+    User: English
+
+    SN: Hello. How can I help you with ?
+
+    * recording
+    * done recording
+    User: handicraft societies in Puducherry.
+
+    Keywords: {'tags': ['handicraft', 'society'], 'state': 'Puducherry'}
+    SN: "Grant To Handicrafts Societies" Component of the "Development of Handicrafts" Scheme: “Grant To Handicrafts Societies” by the Department of Industries and Commerce, UT of Puducherry aims to encourage the creation 
+    of Handicrafts Societies to enhance coordination and skill among craftspeople. Grants are provided to registered societies for organizing or participating in exhibitions.
+
+    SN: Anything else ?
+
+    * recording
+    * done recording
+    User: Good bye.
+
+    SN: Good bye.
+
+
+
 ## Usage/Examples
 
 Run the main.py script:
