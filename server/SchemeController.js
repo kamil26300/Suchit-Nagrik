@@ -5,7 +5,7 @@ exports.getData = async (req, res) => {
   try {
     const { tags, state } = req.body;
 
-    const data = await getDataFromRegex(tags, state);
+    const data = await getSchemesFromKeywords(tags, state);
 
     data
       ? res.status(200).json(data)
@@ -15,8 +15,42 @@ exports.getData = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
+exports.getAnalytics = async (req, res) => {
+  const collection = mongoose.connection.db.collection("schemes");
+  const data = await collection
+    .find(
+      {},
+      {
+        projection: {
+          "fields.schemeCategory": 1,
+          _id: 0,
+        },
+      }
+    )
+    .toArray();
 
-const getDataFromRegex = async (tags, state) => {
+  function countSchemeFrequencies(data) {
+    const frequencyMap = {};
+
+    data.forEach((item) => {
+      const category = item.fields.schemeCategory[0];
+      frequencyMap[category] = (frequencyMap[category] || 0) + 1;
+    });    
+
+    return frequencyMap;
+  }
+
+  const result = countSchemeFrequencies(data)
+
+  let count = 0
+  for (const frequency of Object.values(result)) {
+    count += frequency
+  }  
+
+  res.status(200).json(result);
+};
+
+const getSchemesFromKeywords = async (tags, state) => {
   const collection = mongoose.connection.db.collection("schemes");
 
   const caseInsensitiveRegex = (item) => {
