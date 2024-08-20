@@ -50,10 +50,6 @@ Run python script:
 ```
 
 
-## Authors
-
-- [@kamil26300](https://www.github.com/kamil26300)
-
 
 ## Demo
 
@@ -161,3 +157,8 @@ The assistant will process your query, retrieve relevant information from the ba
 **AI:** openAI
 
 **Translator:** deep_translator
+
+
+## Authors
+
+- [@kamil26300](https://www.github.com/kamil26300)
