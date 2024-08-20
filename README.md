@@ -1,56 +1,163 @@
-SUCHIT NAGRIK
+
+# Suchit Nagrik
+
 This project is a voice-activated assistant designed to provide information about government schemes in India. It uses speech recognition and natural language understanding to process user queries and retrieve relevant scheme details.
 
-Features
-Voice interaction: Users can interact with the assistant using their voice.
-Multiple languages: Supports Hindi, Tamil, Telugu, and English.
-Scheme information retrieval: Fetches details about various government schemes based on user queries.
-Natural language understanding: Extracts keywords and entities from user input to improve search accuracy.
-Dependencies
-OpenAI: Used for speech-to-text, text-to-speech, and natural language processing.
-Deep Translator: Handles language translation.
-PyAudio: Records audio input from the microphone.
-Pygame: Plays audio output.
-Requests: Makes API calls to the backend server for scheme data.
-Inflect: Handles word pluralization and singularization.
-Wave: Processes audio files.
-Python-dotenv: Loads environment variables from a .env file.
+
+## API Reference
+
+#### Get schemes by keywords
+
+```http
+  POST /schemes/data
+```
+
+| Body | Body Type     | Description | Response | Response Type |
+| :-------- | :------- | :------------------------- | :--- | :-- |
+| `Keywords[Tags, State]` | `object[Array, String]` | **Required**. Keywords | Schemes | `Array`
+
+#### Get analytics
+
+```http
+  GET /schemes/analytics
+```
+
+| Response | Response Type     |
+| :-------- | :------- |
+| Category and their frequency      | `Object` | 
 
 
-**Installation**
-    Clone the repository:
-        Bash
-            git clone <repository-url>
-    
-    Install dependencies:
-        Bash
-            pip install -r requirements.txt   
-    
-    Create a .env file in the project root directory and add the following environment variables:   
-        OPEN_AI_API_KEY=<your-openai-api-key>
-        MACHINE_LANGUAGE_CODE=<machine-language-code> # e.g., 'en'
-        USER_LANGUAGE_CODE=<user-language-code> # e.g., 'hi'
-        MACHINE_LANGUAGE=<machine-language> # e.g., 'English'
-        USER_LANGUAGE=<user-language> # e.g., 'Hindi'
-        OUTPUT_FILE=<path-to-output-audio-file> # e.g., 'output.mp3'
-        INPUT_FILE=<path-to-input-audio-file> # e.g., 'input.wav'
-        BACK_END=<backend-server-url> # URL of the backend server providing scheme data
-        TTS_MODEL=<text-to-speech-model> # e.g., 'tts-1'
-        STT_MODEL=<speech-to-text-model> # e.g., 'whisper-1'
-        GPT_TEXT_MODEL=<gpt-text-model> # e.g., 'gpt-3.5-turbo-16k'
+## Features
+
+- Voice interaction: Users can interact with the assistant using their voice.
+- Multiple languages: Supports Hindi, Tamil, Telugu, and English.
+- Scheme information retrieval: Fetches details about various government schemes based on user queries.
+- Natural language understanding: Extracts keywords and entities from user input to improve search accuracy.
 
 
-Usage
-    Run the main.py script:
-        Bash
-            python main.py
-    
-    The assistant will greet you and ask you to select your preferred language.
-    Once the language is selected, you can start asking questions about government schemes using your voice.
-    The assistant will process your query, retrieve relevant information from the backend server, and provide a spoken response.
+## Deployment
+
+Run the server:
+
+```bash
+  cd server
+  npm run dev
+```
+
+Run python script:
+```bash
+  python SN.py
+```
 
 
-**Sample Usage**
+## Authors
 
-![image](https://github.com/user-attachments/assets/77046830-f836-43c1-bc11-3668eb826e8b)
-![image](https://github.com/user-attachments/assets/ffc2e0ef-c462-4229-b4fb-1abd1212dd90)
+- [@kamil26300](https://www.github.com/kamil26300)
+
+
+## Demo
+
+    Hello from the pygame community. https://www.pygame.org/contribute.html
+    SN: Hello, I'm here to help you with schemes. Select your language: Hindi, Tamil, Telugu, or English?
+
+    * recording
+    * done recording
+    User: English
+
+    SN: Hello. How can I help you with ?
+
+    * recording
+    * done recording
+    User: handicraft societies in Puducherry.
+
+    Keywords: {'tags': ['handicraft', 'society'], 'state': 'Puducherry'}
+    SN: "Grant To Handicrafts Societies" Component of the "Development of Handicrafts" Scheme: “Grant To Handicrafts Societies” by the Department of Industries and Commerce, UT of Puducherry aims to encourage the creation 
+    of Handicrafts Societies to enhance coordination and skill among craftspeople. Grants are provided to registered societies for organizing or participating in exhibitions.
+
+    SN: Anything else ?
+
+    * recording
+    * done recording
+    User: Good bye.
+
+    SN: Good bye.
+
+
+
+## Installation
+
+Clone the repository:
+```bash
+git clone https://github.com/kamil26300/Suchit-Nagrik
+```
+
+Install python packages:
+```bash
+// requirements.txt
+deep_translator
+dotenv
+inflect
+openai
+requests
+pyaudio
+struct
+pygame
+wave
+os
+```
+```bash
+pip install -r requirements.txt   
+```
+
+Install ExpressJS dependencies:
+```bash
+// requirements.txt
+cookie-parser
+cors
+dotenv
+express
+mongoose
+morgan
+nodemon
+```
+```bash
+npm install -r requirements.txt   
+```
+
+Create a .env file in the project root directory and add the following environment variables:   
+```bash
+OPEN_AI_API_KEY = <your-openai-api-key>
+MACHINE_LANGUAGE_CODE = <machine-language-code>
+USER_LANGUAGE_CODE = <user-language-code>
+MACHINE_LANGUAGE = <machine-language>
+USER_LANGUAGE = <user-language>
+OUTPUT_FILE = <path-to-output-audio-file>
+INPUT_FILE = <path-to-input-audio-file>
+BACK_END = <backend-server-url>
+TTS_MODEL = <text-to-speech-model>
+STT_MODEL = <speech-to-text-model>
+GPT_TEXT_MODEL = <gpt-text-model>
+```
+## Usage/Examples
+
+Run the main.py script:
+```bash
+python main.py
+```
+
+The assistant will greet you and ask you to select your preferred language.
+
+Once the language is selected, you can start asking questions about government schemes using your voice.
+
+The assistant will process your query, retrieve relevant information from the backend server, and provide a spoken response.
+
+
+## Tech Stack
+
+**Server:** NodeJS, ExpressJS, python
+
+**Database:** MongoDB
+
+**AI:** openAI
+
+**Translator:** deep_translator
