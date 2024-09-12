@@ -163,3 +163,4 @@ The assistant will process your query, retrieve relevant information from the ba
 ## Authors
 
 - [@kamil26300](https://www.github.com/kamil26300)
+- [@Dhruvkhanna26](https://github.com/Dhruvkhanna26)
