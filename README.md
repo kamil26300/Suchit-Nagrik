@@ -1,5 +1,5 @@
 
-# Suchit Nagrik
+# Socio Connect
 
 This project is a voice-activated assistant designed to provide information about government schemes in India. It uses speech recognition and natural language understanding to process user queries and retrieve relevant scheme details.
 
